@@ -31,7 +31,7 @@ spring:
         password: 123456
   web:
     resources:
-      static-locations: classpath:/static,classpath:/public,classpath:/resources/template,classpath:/META-INF/resources
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
       # 静态资源配置
 #        ,file:${web.upload.path}
   #端口号配置
