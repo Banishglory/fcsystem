@@ -62,43 +62,45 @@
         a:hover{
             text-decoration: underline;
         }
-
+        #indexBody{
+            background-image: url("/static/images/index_bg.jpg");
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+        }
     </style>
 </head>
-<body>
+<body id="indexBody">
 <form class="layui-form" action="" method="post">
     <div class="container">
         <button class="close" title="关闭">X</button>
-        <div class="layui-form-mid layui-word-aux">
-            <img id="logoid" src="06.png" height="35">
-        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">用户名</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                <input type="text" name="user_name" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">密 &nbsp;&nbsp;码</label>
+            <label class="layui-form-label">密 &nbsp;&nbsp;码1</label>
             <div class="layui-input-inline">
-                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                <input type="password" name="user_psd" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
             </div>
             <!-- <div class="layui-form-mid layui-word-aux">辅助文字</div> -->
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">验证码</label>
+            <label class="layui-form-label">密  码2</label>
             <div class="layui-input-inline">
-                <input type="text" name="title" required  lay-verify="required" placeholder="请输入验证码" autocomplete="off" class="layui-input verity">
+                <input type="password" name="user_psd2" required lay-verify="required" placeholder="请再次输入密码" autocomplete="off" class="layui-input">
             </div>
-
+            <!-- <div class="layui-form-mid layui-word-aux">辅助文字</div> -->
         </div>
 
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit lay-filter="formDemo">登陆</button>
+                <button class="layui-btn" lay-submit lay-filter="userRegister">注册</button>
             </div>
         </div>
-        <a href="" class="font-set">忘记密码?</a>  <a href="" class="font-set">立即注册</a>
+
     </div>
 </form>
 <script type="text/javascript" th:src="@{/js/jQuery-3.0.6.js}"></script>
@@ -111,9 +113,9 @@
             ,laydate = layui.laydate;
 
         //监听提交
-        form.on('submit(demo1)', function(data){
+        form.on('submit(userRegister)', function(data){
             layer.alert(JSON.stringify(data.field), {
-                title: '最终的提交信息'
+                title: '用户注册'
             })
             return false;
         });

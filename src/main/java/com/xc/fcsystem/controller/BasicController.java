@@ -19,11 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 public class BasicController {
 
     @RequestMapping(value = "/login")
-    public String index(HttpServletRequest request, HttpServletResponse response){
-
-
-
-        return  "index";
+    public String index(HttpServletRequest request, HttpServletResponse response) {
+        return "userLogin";
     }
 
 

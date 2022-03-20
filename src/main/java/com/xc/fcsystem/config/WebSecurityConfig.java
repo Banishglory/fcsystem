@@ -44,8 +44,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
         http.csrf().disable(); //解除拦截  重要！！！！
         http.authorizeRequests()
-                .antMatchers("/static/**","/third/**","/js/**").permitAll()//放开资源
-                .antMatchers("/template/index.html", "/index").permitAll()
+                .antMatchers("/third/**","/js/**","/images/**","/dao/**","/user/base/userLogin").permitAll()//放开资源
+                .antMatchers("/template/index.html","/template/userRegister.html").permitAll()
                 .anyRequest().authenticated() //任何请求,登录后可以访问
                 .and()
                 .formLogin()
@@ -65,11 +65,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring() .antMatchers("/static/**");
-
-    }
 }
 
